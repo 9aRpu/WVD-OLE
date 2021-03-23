@@ -15,4 +15,4 @@ $sourceSSMS = "https://aka.ms/ssmsfullsetup"
 $destinationSSMS = "$LocalPath\SSMS.exe"
 Invoke-WebRequest $sourceSSMS -OutFile $destinationSSMS
 
-Start-Process -FilePath "$LocalPath\SSMS.exe" -ArgumentList "/Install /Quiet /Norestart" -Wait -Passthru
+start "$LocalPath\SSMS.exe" /Quiet
