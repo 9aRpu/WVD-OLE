@@ -9,3 +9,10 @@ Invoke-WebRequest $source -OutFile $destination
 
 # Start the installation when download is finished 
 Start-Process -FilePath "$LocalPath\PowerBIx64.exe" -ArgumentList "-norestart -quiet ACCEPT_EULA=1" -Wait -Passthru
+
+# Download the installer from the Adobe website. Always check for new versions!!
+$sourceSSMS = "https://aka.ms/ssmsfullsetup"
+$destinationSSMS = "$LocalPath\SSMS.exe"
+Invoke-WebRequest $sourceSSMS -OutFile $destinationSSMS
+
+Start-Process -FilePath "$LocalPath\SSMS.exe" -ArgumentList "/Install /Quiet /Norestart" -Wait -Passthru
