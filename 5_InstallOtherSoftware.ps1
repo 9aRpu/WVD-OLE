@@ -8,7 +8,7 @@ $destination = "$LocalPath\AcroRdrDC2100120145_en_US.exe"
 Invoke-WebRequest $source -OutFile $destination
 
 # Start the installation when download is finished
-Start-Process -FilePath "$LocalPath\AcroRdrDC2100120145_en_US.exe" -ArgumentList "/sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES"
+Start-Process -FilePath "$LocalPath\AcroRdrDC2100120145_en_US.exe" -ArgumentList "/sAll /rs /rps /msi /norestart /quiet ALLUSERS=1 EULA_ACCEPT=YES"
 
 #Install Notepad++
 $sourceNotepadPP = "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.9.4/npp.7.9.4.Installer.x64.exe"
