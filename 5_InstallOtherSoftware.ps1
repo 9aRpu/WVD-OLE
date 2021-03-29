@@ -23,7 +23,7 @@ Invoke-WebRequest $source7Zip -OutFile $destination7Zip
 Start-Process -FilePath "$LocalPath\7z1900-x64.exe" -ArgumentList "/S" -Wait -Passthru
 
 # Download the installer from the Adobe website. Always check for new versions!!
-$sourceVLC = "https://get.videolan.org/vlc/3.0.12/win64/vlc-3.0.12-win64.exe"
+$sourceVLC = "https://videolan.mirror.liteserver.nl/vlc/3.0.12/win64/vlc-3.0.12-win64.exe"
 $destinationVLC = "$LocalPath\vlc-3.0.12-win64.exe"
 Invoke-WebRequest $sourceVLC -OutFile $destinationVLC
 
