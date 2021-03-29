@@ -21,3 +21,11 @@ $source7Zip = "https://www.7-zip.org/a/7z1900-x64.exe"
 $destination7Zip = "$LocalPath\7z1900-x64.exe"
 Invoke-WebRequest $source7Zip -OutFile $destination7Zip
 Start-Process -FilePath "$LocalPath\7z1900-x64.exe" -ArgumentList "/S" -Wait -Passthru
+
+# Download the installer from the Adobe website. Always check for new versions!!
+$sourceVLC = "https://get.videolan.org/vlc/3.0.12/win64/vlc-3.0.12-win64.exe"
+$destinationVLC = "$LocalPath\vlc-3.0.12-win64.exe"
+Invoke-WebRequest $sourceVLC -OutFile $destinationVLC
+
+# Start the installation when download is finished
+Start-Process -FilePath "$LocalPath\vlc-3.0.12-win64.exe" -ArgumentList "/L=1033 /S"
